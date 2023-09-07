@@ -1,3 +1,2 @@
 # DEMO VERSION IS UNDER CONSTRUCTION ⚔️
-#subheader will make it great 🤡 
-.........
+#will make it great 🤡 
