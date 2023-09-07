@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/UNITS.css">
@@ -49,15 +49,27 @@
     <!-- ___________________  SideNav END  __________________________________________ -->   
     
     
-        <!-- ___________________  Home START  ___________________________________  --> 
-        <section class="flex-c-m   flex-col   sizefull   p-r-20   p-l-20   p-t-100">
-          <img src="images/logo.jpg" alt="Logo" class="w-full max-w-200">
-          <a  href="https://github.com/Ali8J3"
-          class="waves-effect   waves-light   btn   blue   darken-3   w-full   max-w-250   m-t-10   mb-10   rounded_pill"> Github</a>
-          <a  href="user.html"
-          class="waves-effect   waves-light   btn   blue   darken-3   w-full   max-w-250   m-t-10   mb-10   rounded_pill" > user manager</a>
+        <!-- ___________________  Content START  ___________________________________  --> 
+        <section id="top_action_section">
+            <!-- ___  add button __________-->
+            <div class="p-l-10 p-r-10 p-t-10">
+                <button class="waves-effect   waves-light   btn   blue   darken-2   p-l-30   w-full    rounded_pill flex-c">
+                    <i class="material-icons   m-r-5">add</i>
+                    Add User
+                </button>
+            </div>
+
+            <!-- _______Search Section  _____________ -->
+
+            <div class="row">
+                <div class="input-field col s12">
+                  <input id="search" type="text" class="validate">
+                  <label for="search"> <i class="material-icons pos-relative top-7">search</i> Search</label>
+                </div>
+
+
         </section>
-        <!-- ___________________  Home END  _____________________________________ --> 
+        <!-- ___________________  Content END  _____________________________________ --> 
     
     
     
