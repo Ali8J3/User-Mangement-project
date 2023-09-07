@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/UNITS.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="white z-depth-0">
+  <!-- ____________________   NavigationBar START  _____________________________ -->
+    <nav class="white z-depth-1"> <!-- navigation bar => white:background-color, z-index:box-shadow -->
         <div class="nav-wrapper">
           <a href="#!" class="blue-text">Logo</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger  blue-text"><i class="material-icons">menu</i></a>
@@ -21,24 +23,45 @@
           </ul>
         </div>
       </nav>
-    
+    <!-- ___________________  NavigationBar END  _______________________________ -->
+
+
+    <!-- ___________________  Weeeeeeeeeeeeee  ________________________________________________ -->
+   
+    <!-- ___________________  SideNav START  ________________________________________ -->
       <ul class="sidenav" id="mobile-demo">
+
         <li><div class="user-view">
             <div class="background">
-              <img src="images/office.jpg">
+              <img src="images/background.jpg" class="w-full">
             </div>
-            <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-            <a href="#name"><span class="white-text name">John Doe</span></a>
-            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            <a href="#user"><img class="circle" src="images/user.jpg" class="w-full"></a>
+            <a href="#name"><span class="white-text name">Ali J</span></a>
+            <a href="#email"><span class="white-text email">example@gmail.com</span></a>
           </div></li>
-          <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-          <li><a href="#!">Second Link</a></li>
+          <li><a href="#!"><i class="material-icons">insert_link</i>Github Address</li>
+          <li><a href="#!"><i class="material-icons">insert_link</i>Work email</li>
+          <li><a href="#!"><i class="material-icons">insert_link</i>personal email</li>
           <li><div class="divider"></div></li>
           <li><a class="subheader">Subheader</a></li>
-          <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+          <li><a class="waves-effect" href="#!">Third Link (With Waves!!)</a></li>
       </ul>
+    <!-- ___________________  SideNav END  __________________________________________ -->   
+    
+    
+        <!-- ___________________  Home START  ___________________________________  --> 
+        <section class="flex-c-m   flex-col   sizefull   p-r-20   p-l-20   p-t-100">
+          <img src="images/logo.jpg" alt="Logo" class="w-full max-w-200">
+          <a  href="https://github.com/Ali8J3"
+          class="waves-effect   waves-light   btn   blue   darken-3   w-full   max-w-250   m-t-10   mb-10   rounded_pill"> Github</a>
+          <a  href="user.html"
+          class="waves-effect   waves-light   btn   blue   darken-3   w-full   max-w-250   m-t-10   mb-10   rounded_pill" > user manager</a>
+        </section>
+        <!-- ___________________  Home END  _____________________________________ --> 
+    
+    
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
-<!--              choose your own images and find that css file he was talking about !important    -->
