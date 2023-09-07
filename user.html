@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/UNITS.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ____________________   NavigationBar START  _____________________________ -->
+    <nav class="white z-depth-1 top_navbar"> <!-- navigation bar => white:background-color, z-index:box-shadow -->
+        <div class="nav-wrapper">
+          <a href="#!" class="blue-text  hide-on-med-and-up">Home</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger  blue-text"><i class="material-icons">menu</i></a>
+          <ul class="hide-on-med-and-down">
+            <li><a href="/"class="blue-text">Home</a></li>
+            <li><a href="/"class="blue-text">User Manager</a></li>
+            <li><a href="/"class="blue-text">Telegram</a></li>
+            <li><a href="/"class="blue-text">Instagram</a></li>
+          </ul>
+        </div>
+      </nav>
+    <!-- ___________________  NavigationBar END  _______________________________ -->
+
+
+    <!-- ___________________  Weeeeeeeeeeeeee  ________________________________________________ -->
+   
+    <!-- ___________________  SideNav START  ________________________________________ -->
+      <ul class="sidenav" id="mobile-demo">
+
+        <li><div class="user-view">
+            <div class="background">
+              <img src="images/background.jpg" class="w-full">
+            </div>
+            <a href="#user"><img class="circle" src="images/user.jpg" class="w-full"></a>
+            <a href="#name"><span class="white-text name">Ali J</span></a>
+            <a href="#email"><span class="white-text email">example@gmail.com</span></a>
+          </div></li>
+          <li><a href="#!"><i class="material-icons">insert_link</i>Github Address</li>
+          <li><a href="#!"><i class="material-icons">insert_link</i>Work email</li>
+          <li><a href="#!"><i class="material-icons">insert_link</i>personal email</li>
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Subheader</a></li>
+          <li><a class="waves-effect" href="#!">Third Link (With Waves!!)</a></li>
+      </ul>
+    <!-- ___________________  SideNav END  __________________________________________ -->   
+    
+    
+        <!-- ___________________  Content START  ___________________________________  --> 
+        <section id="top_action_section">
+            <!-- ___  add button __________-->
+            <div class="p-l-10 p-r-10 p-t-10">
+                <button class="waves-effect   waves-light   btn   blue   darken-2   p-l-30   w-full    rounded_pill flex-c">
+                    <i class="material-icons   m-r-5">add</i>
+                    Add User
+                </button>
+            </div>
+
+            <!-- _______Search Section  _____________ -->
+
+            <div class="row">
+                <div class="input-field col s12">
+                  <input id="search" type="text" class="validate">
+                  <label for="search"> <i class="material-icons pos-relative top-7">search</i> Search</label>
+                </div>
+
+
+        </section>
+        <!-- ___________________  Content END  _____________________________________ --> 
+    
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
