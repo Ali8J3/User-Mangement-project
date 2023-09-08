@@ -2,4 +2,20 @@
     .top_navbar{
         box-shadow: 0  0 30px rgb(133, 163, 231) !important;
     }
+
+    #top_action_section{
+        display: flex !important;
+        align-items: center !important;
+    }
+}
+
+.user_list_item.active .user_list_Arrow_icon{
+    transform: rotate(180deg);
+}
+.user_list_item.active , .user_list_item.active .collapsible-header{
+ background-color: rgba(108, 121, 139, 0.3);
+}
+
+table.highlight > tbody > tr:hover{
+    background-color: #bbdefb;
 }
