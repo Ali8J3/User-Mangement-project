@@ -9,15 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-   <link rel="stylesheet" href="css/materialize-rtl.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/UNITS.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="icon" href="image/x-icon" type="images/favicon.icon"> -->
 </head>
-<body dir="rtl">
+<body x-data = "usersData">
 
-  <!-- ____________________   NavigationBar START  _____________________________ -->
+  <!-- __________________ NavigationBar START ________________________-->
   <nav class="white z-depth-1 top_navbar"> <!-- navigation bar => white:background-color, z-index:box-shadow -->
         <div class="nav-wrapper">
           <a href="#!" class="blue-text  hide-on-med-and-up">Home</a>
@@ -85,9 +84,9 @@
         </section>
 
    
-        <!-- _______Users IDs  START  _______________-->
+        <!-- _______Users IDs Table  START  _______________-->
 
-<section class="user_list_section">
+<section class="user_list_section" x-init = "getUsers()">
 
   <!-- _______Medium and Down  -->
   <ul class="collapsible hide-on-med-and-up">
@@ -184,28 +183,19 @@
           <th>Action</th>
           
         </tr>
-      </thead>
+      </thead> 
+      
+      <tbody class="desktop_table_body">
+
+      <template x-for = "user in users">
+
         <tr>
 
-          <td>1</td>
-          <td>Ali</td>
-          <td>Ali8J3</td>
-          <td>example@gmail.com</td>
-          <td>Iran example street...</td>
-          <td>
-            <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-            <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
-          </td>
-
-        </tr>
-        
-        <tr>
-
-          <td>2</td>
-          <td>Ali</td>
-          <td>Ali8J3</td>
-          <td>example@gmail.com</td>
-          <td>Iran example street...</td>
+          <td x-text = "user.id"></td>
+          <td x-text = "user.name"></td>
+          <td x-text = "user.Username"></td>
+          <td x-text = "user.email"></td>
+          <td x-text = "user.address.street"></td>
           <td>
             <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
             <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
@@ -213,34 +203,10 @@
 
         </tr>
 
-        <tr>
+      </template>
+     
 
-          <td>3</td>
-          <td>Ali</td>
-          <td>Ali8J3</td>
-          <td>example@gmail.com</td>
-          <td>Iran example street...</td>
-          <td>
-            <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-            <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
-          </td>
-
-        </tr>
-
-        <tr>
-
-          <td>4</td>
-          <td>Ali</td>
-          <td>Ali8J3</td>
-          <td>example@gmail.com</td>
-          <td>Iran example street...</td>
-          <td>
-            <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-            <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
-          </td>
-
-        </tr>
-
+      </tbody>
 
     </table>
 
@@ -333,8 +299,10 @@
 
             <!-- ___________________  Content END  _____________________________________ --> 
     
-
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/axios.js.map"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="js/usersControler.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/users.js"></script>
