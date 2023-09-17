@@ -2,11 +2,20 @@ document.addEventListener("alpine:init", () => {
   Alpine.data("usersData", () => ({
     users: [],
 
+    isLoading: false,
+    showAddModal: false,
+
     getUsers() {
-      axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
-        this.users = res.data;
-        console.log(res);
-      });
+      this.isLoading = true;
+
+      axios
+        .get("https://jsonplaceholder.typicode.com/users")
+        .then((res) => {
+          this.users = res.data;
+        })
+        .finally(() => {
+          this.isLoading = false;
+        });
     },
   }));
 });

@@ -65,7 +65,8 @@
 
             <!-- ___  add button __________-->
             <div class="p-l-10 p-r-10 p-t-10 col s12 m3 l2">
-                <button id="add_user_button" class="waves-effect   waves-light   btn   blue   darken-2   p-l-30   w-full    rounded_pill flex-c">
+                <button id="add_user_button" class="waves-effect   waves-light   btn   blue   darken-2   p-l-30   w-full    rounded_pill flex-c"
+                        x-on:click = "showAddModal = true"  >
                     <i class="material-icons   m-r-5">add</i>
                     Add User
                 </button>
@@ -85,37 +86,56 @@
 
    
         <!-- _______Users IDs Table  START  _______________-->
+<!-- <template x-if = "isLoading"> -->
+<div x-show = "isLoading"  class="center-align">
 
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- </template> -->
 <section class="user_list_section" x-init = "getUsers()">
 
   <!-- _______Medium and Down  -->
   <ul class="collapsible hide-on-med-and-up">
 
+
+    <template x-for = "user in users">
     <li class="user_list_item">
 
       <div class="collapsible-header">
-        <i class="material-icons blue-text darken-2 
-        user_list_Arrow_icon trans-0-2">arrow_drop_down_circle</i>
-        ALi JDK
+
+        <i class="material-icons blue-text darken-2 user_list_Arrow_icon trans-0-2">arrow_drop_down_circle</i>
+        <span x-text = "user.name"></span>
+      
       </div>
 
       <div class="collapsible-body">
 
         <div class="p-all-5">
           <span class="f-bold">UserName : </span>
-          <span> Ali</span>
+          <span x-text = "user.username"></span>
         </div>
 
         <div class="p-all-5">
           <span class="f-bold">Email : </span>
-          <span>example@gmail.com</span>
+          <span x-text = "user.email"></span>
         </div>
      
 
       <div class="p-all-5">
         
         <span class="f-bold">Address : </span>
-        <span> Iran - example street... </span>
+        <span x-text = "user.address.street"></span>
       
       </div>
 
@@ -126,44 +146,10 @@
         <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
       </div>
  </div>
+
     </li>
 
-    <li class="user_list_item">
-
-      <div class="collapsible-header">
-        <i class="material-icons blue-text darken-2 
-        user_list_Arrow_icon trans-0-2">arrow_drop_down_circle</i>
-        ALi JDK
-      </div>
-
-      <div class="collapsible-body">
-
-        <div class="p-all-5">
-          <span class="f-bold">UserName : </span>
-          <span> Ali</span>
-        </div>
-
-        <div class="p-all-5">
-          <span class="f-bold">Email : </span>
-          <span>example@gmail.com</span>
-        </div>
-     
-
-      <div class="p-all-5">
-        
-        <span class="f-bold">Address : </span>
-        <span> Iran - example street... </span>
-      
-      </div>
-
-
-      <div class="p-all-5 flex-l-m">
-        <span class="f-bold">Action : </span>
-        <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-        <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
-      </div>
- </div>
-    </li>
+</template>
 
   </ul>
 
@@ -233,9 +219,9 @@
 
     <div class="peginatin_buttons">
      
-      <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5pt1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
+       <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5pt1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_left</i>
      
-      <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5pt1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_left</i>
+       <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5pt1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
     </div>
 
 
@@ -247,9 +233,9 @@
 
 
         <!-- _______Add User Modal START ____________-->
-<div class="add_user_modal_back dis-none"></div>
+<div class="add_user_modal_back"  x-show = "showAddModal" x-transition x-on:click = "showAddModal = false"></div>
 
-  <div class="add_user_modal container rounded_top_30 trans-0-3">
+  <div class="add_user_modal container rounded_top_30 trans-0-3"  x-bind:class = "showAddModal && 'show' ">
 
     <div class="row p-t-10 p-b-10 p-r-10 p-l-10 center-on-small-only">
 
