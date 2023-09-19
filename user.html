@@ -109,7 +109,7 @@
   <ul class="collapsible hide-on-med-and-up">
 
 
-    <template x-for = "user in users">
+    <template x-for = "user in pageUsers">
     <li class="user_list_item">
 
       <div class="collapsible-header">
@@ -173,7 +173,7 @@
       
       <tbody class="desktop_table_body">
 
-      <template x-for = "user in users">
+      <template x-for = "user in pageUsers">
 
         <tr>
 
@@ -205,23 +205,28 @@
 
     <div class=" peginatin_item_counts p-r-15 flex-l p-l-10 flex-l-m">
       showing
-      <span class="m-l-5 m-r-5 max-w-50">
+      <span class="m-l-5 m-r-5 max-w-50 pos-relative top-4"
+      x-init="$watch('itemsCount', (value) => handleChangeItemsCount(value))">
 
-        <input type="number" class="blue-text darken-2 no-border center-align mb-0" value="10">
+        <input type="number" class="blue-text darken-2 no-border center-align mb-0" 
+        x-model="itemsCount" x-on:change="pagination()">
 
       </span>
+      
       of
 
-      <span class="blue-text darken-2 m-l-5 m-r-5">100</span>
+      <span class="blue-text darken-2 m-l-5 m-r-5" 
+      x-text="users.length">100</span>
 
     </div>
 
+    <strong x-text="currentPage" class="blue-text page_number"></strong>
 
     <div class="peginatin_buttons">
      
-       <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5pt1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_left</i>
+       <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5pt1 p-b-3 waves-effect waves-light white-text rounded_pill" x-on:click="prevPage()">keyboard_arrow_left</i>
      
-       <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5pt1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
+       <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5pt1 p-b-3 waves-effect waves-light white-text rounded_pill " x-on:click="nextPage()">keyboard_arrow_right</i>
     </div>
 
 

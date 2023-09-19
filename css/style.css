@@ -6,10 +6,10 @@
     font-weight: normal;
     font-style: normal;
 } */
-*{
-    /* direction: rtl; */
-    /* font-family: "BYekan"; */
-}
+/* *{
+    direction: rtl;
+    font-family: "BYekan";
+} */
 @media(min-width:600px){
     .top_navbar{
         box-shadow: 0  0 30px rgb(133, 163, 231) !important;
@@ -73,4 +73,13 @@ table.highlight > tbody > tr:hover{
 .user_list_section{
     overflow: auto;
     height: calc(100vh - 258px);
+}
+.page_number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
 }
