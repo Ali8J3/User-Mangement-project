@@ -1,5 +1,6 @@
 document.addEventListener("alpine:init", () => {
   Alpine.data("usersData", () => ({
+    mainUsers: [],
     users: [],
     pageUsers: [],
 
@@ -8,6 +9,11 @@ document.addEventListener("alpine:init", () => {
     pageCounts: 1,
     itemsCount: 4,
     currentPage: 1,
+    newUserInfo: {
+      name: "",
+      username: "",
+      email: "",
+    },
 
     getUsers() {
       this.isLoading = true;
@@ -15,6 +21,7 @@ document.addEventListener("alpine:init", () => {
       axios
         .get("https://jsonplaceholder.typicode.com/users")
         .then((res) => {
+          this.mainUsers = res.data;
           this.users = res.data;
           this.pagination();
         })
@@ -38,6 +45,7 @@ document.addEventListener("alpine:init", () => {
         this.pagination();
       }
     },
+
     prevPage() {
       this.currentPage--;
       this.pagination();
@@ -46,9 +54,46 @@ document.addEventListener("alpine:init", () => {
         this.pagination();
       }
     },
+
     handleChangeItemsCount(value) {
       if (value < 1) this.itemsCount = 1;
       if (value > this.users.length) this.itemsCount = this.users.length;
     },
+
+    handleSearch(e) {
+      setTimeout(() => {
+        this.users = this.mainUsers.filter(
+          (
+            user // if didn't work add "(" <=
+          ) =>
+            user.name.includes(e.value) ||
+            user.username.includes(e.value) ||
+            user.email.includes(e.value)
+        ); //and here ")" before the existing one <=
+        this.currentPage = 1;
+        this.pagination();
+      }, 100);
+    },
+
+    handleSubmitAddUsersFrom() {
+      this.isLoading = true;
+      axios.post("https://jsonplaceholder.typicode.com/users", this.newUserInfo)
+        .then((res) => {
+          if (res.status === 201) {
+            this.mainUsers.push(res.data);
+            this.showAddModal = false;
+            this.pagination();
+          }
+        })
+        .finally(() => {
+          this.isLoading = false;
+        });
+    },
+
+
+
+
+
+    
   }));
 });

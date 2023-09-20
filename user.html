@@ -76,7 +76,7 @@
             <!-- _______Search Section  _____________ -->
             <div class="row col s12 m9 l8 m-b-5">
                 <div class="input-field col s12">
-                  <input id="search" type="text" class="validate">
+                  <input id="search" type="text" class="validate" x-on:keydown="handleSearch($el)">
                   <label for="search"> <i class="material-icons pos-relative top-7">search</i> Search</label>
                 </div>
 
@@ -254,27 +254,30 @@
 
         <div class="input-field col s12">
 
-          <input type="text" id="name" class="validate">
+          <input type="text" id="name" class="validate" x-model="newUserInfo.name">
           <label for="name">Name:</label>
 
         </div>
 
         <div class="input-field col s12">
 
-          <input type="text" id="uername" class="validate">
+          <input type="text" id="uername" class="validate" x-model="newUserInfo.username">
           <label for="name">Username:</label>
 
         </div>
 
         <div class="input-field col s12">
 
-          <input type="email" id="email" class="validate">
+          <input type="email" id="email" class="validate" x-model="newUserInfo.email">
           <label for="name">Email:</label>
 
         </div>
 
-        <button type="button" class="waves-effect waves-light btn blue darken-1 m-t-20 m-b-10 w-full max-w-250 rounded_pill">
+        <button type="button" class="waves-effect waves-light btn blue darken-1 m-t-20 m-b-10 w-full max-w-250 rounded_pill"
+         x-on:click="handleSubmitAddUsersFrom()">
+
           submit
+        
         </button>
 
 
