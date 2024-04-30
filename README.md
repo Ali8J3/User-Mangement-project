@@ -1,4 +1,2 @@
-# This is a user management project using(only Front-End)
-# Using HTML, CSS(materialize), and JS(alpine.js and axios.js)
-#NOTE: this is only a TEST PROJECT 
-and is almost done...
+# User Management web sample.
+## made to practice my front-end programming skills such as materializeCSS, AlpineJS, and axiosJS.
